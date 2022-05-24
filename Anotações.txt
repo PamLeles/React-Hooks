@@ -1,0 +1,9 @@
+Desafio useEffect:
+- fazer uma aplicação que permita colocar número pares e impares e indique,
+o que é par ou impar 
+- utilizar  o useState e useEffect
+-> <span> // para escrever status
+-> <span> // com um cor diferente ao indicar o par
+*-------------------------------------------------------------------------*
+
+

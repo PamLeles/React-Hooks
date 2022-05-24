@@ -10,11 +10,25 @@ function calcFatorial(num) {
 }
 
 const UseEffect = (props) => {
+    //exercicio 1
     const [number, setNumber] = useState(1)
     const [fatorial, setFatorial] = useState(1)
 
     useEffect(function () {
         setFatorial(calcFatorial(number))
+    }, [number]);
+
+    useEffect(function () {
+        if (fatorial > 10000) {
+            document.title = "Oppss"
+        }
+    }, [fatorial]);
+
+    //desafio useEffect
+    const [status, setStatus] = useState("Ímpar")
+
+    useEffect(function () {
+        setStatus(number % 2 === 0 ? "Par" : "Ímpar")
     }, [number])
 
     return (
@@ -30,9 +44,12 @@ const UseEffect = (props) => {
                     value={number}
                     onChange={e => setNumber(e.target.value)} />
             </div>
-            <SectionTitle title="Exercício #2" />
+            <SectionTitle title="Desafio useEffect" />
             <div className="center">
-
+                <div>
+                    <span className="text">Status: </span>
+                    <span className="text red">{status}</span>
+                </div>
             </div>
 
         </div>
