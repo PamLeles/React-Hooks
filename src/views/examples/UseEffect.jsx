@@ -6,7 +6,7 @@ function calcFatorial(num) {
     const n = parseInt(num)
     if (n < 0) return -1;
     if (n === 0) return 1;
-    return calcFatorial(n - 1) * n
+    return (n - 1) * n
 }
 
 const UseEffect = (props) => {
@@ -14,11 +14,11 @@ const UseEffect = (props) => {
     const [number, setNumber] = useState(1)
     const [fatorial, setFatorial] = useState(1)
 
-    useEffect(function () {
+    useEffect(() => {
         setFatorial(calcFatorial(number))
     }, [number]);
 
-    useEffect(function () {
+    useEffect(() => {
         if (fatorial > 10000) {
             document.title = "Oppss"
         }
@@ -27,9 +27,9 @@ const UseEffect = (props) => {
     //desafio useEffect
     const [status, setStatus] = useState("Ímpar")
 
-    useEffect(function () {
+    useEffect(() => {
         setStatus(number % 2 === 0 ? "Par" : "Ímpar")
-    }, [number])
+    }, [number]);
 
     return (
         <div className="UseEffect">
